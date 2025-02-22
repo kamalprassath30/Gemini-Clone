@@ -64,9 +64,14 @@
   right: 10px;
 }
 
-.main .card p {
+.main .card h2 {
   color: #585858;
   font-size: 17px;
+}
+
+.main .card ul {
+  padding-left: 16px;
+  color: #585858;
 }
 
 .main .card:hover {

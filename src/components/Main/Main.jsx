@@ -14,6 +14,48 @@ const Main = () => {
     input,
   } = useContext(Context);
 
+  const cards = [
+    {
+      title: "Suggestions",
+      icon: assets.compass_icon,
+      content: [
+        "Try a new hobby: How about learning the guitar or trying yoga?",
+        "Book Recommendation: “Atomic Habits” by James Clear",
+      ],
+    },
+    {
+      title: "Coding",
+      icon: assets.code_icon,
+      content: [
+        "Workout of the Day: 3 sets of squats, pushups, and planks",
+        "Tip: Stay hydrated — drink a glass of water before and after your workout.",
+      ],
+    },
+    {
+      title: "Places",
+      icon: assets.bulb_icon,
+      content: [
+        "Weekend Getaway: Check out XYZ Hill Station!",
+        "Café to Try: The Coffee Brew — Great vibes and amazing lattes.",
+      ],
+    },
+    {
+      title: "Food/Recipes",
+      icon: assets.message_icon,
+      content: [
+        "Recipe Idea: Try a quick and healthy avocado toast!",
+        "Snack Hack: Greek yogurt + honey + mixed nuts = yum!",
+      ],
+    },
+  ];
+
+  const getRandomCards = (num) => {
+    const shuffled = [...cards].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, num);
+  };
+
+  const randomCards = getRandomCards(4);
+
   return (
     <div className="main">
       <div className="nav">
@@ -28,27 +70,22 @@ const Main = () => {
           <>
             <div className="greet">
               <p>
-                <span>Hello, Kamal</span>
+                <span>Hello,</span>
               </p>
               <p>How can I help you today?</p>
             </div>
             <div className="cards">
-              <div className="card">
-                <p>Sugesstion</p>
-                <img src={assets.compass_icon} alt="" />
-              </div>
-              <div className="card">
-                <p>Places</p>
-                <img src={assets.bulb_icon} alt="" />
-              </div>
-              <div className="card">
-                <p>Coding</p>
-                <img src={assets.message_icon} alt="" />
-              </div>
-              <div className="card">
-                <p>Gym</p>
-                <img src={assets.code_icon} alt="" />
-              </div>
+              {randomCards.map((card, index) => (
+                <div key={index} className="card">
+                  <h2>{card.title}</h2>
+                  <img src={card.icon} />
+                  <ul>
+                    {card.content.map((item, i) => (
+                      <li key={i}>{item}</li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
             </div>
           </>
         ) : (

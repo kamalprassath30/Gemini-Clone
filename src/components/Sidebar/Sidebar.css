@@ -12,7 +12,7 @@
 }
 
 .sidebar .menu {
-  display: block;
+  display: flex;
   margin-left: 10px;
   cursor: pointer;
 }
@@ -30,10 +30,11 @@
   cursor: pointer;
 }
 
-.sidebar .menu:hover {
+/* .sidebar .menu:hover {
   background-color: gray;
   border-radius: 50%;
-}
+  padding: 8px;
+} */
 
 .sidebar .recent {
   display: flex;
