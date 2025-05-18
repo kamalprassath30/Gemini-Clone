@@ -19,15 +19,15 @@ const Main = () => {
       title: "Suggestions",
       icon: assets.compass_icon,
       content: [
-        "Try a new hobby: How about learning the guitar or trying yoga?",
+        "Try a new hobby: How about learning finance and stock markets?",
         "Book Recommendation: “Atomic Habits” by James Clear",
       ],
     },
     {
-      title: "Coding",
+      title: "Fitness",
       icon: assets.code_icon,
       content: [
-        "Workout of the Day: 3 sets of squats, pushups, and planks",
+        "Workout of the Day: 3 sets of pushups, benchpress, and planks",
         "Tip: Stay hydrated — drink a glass of water before and after your workout.",
       ],
     },
